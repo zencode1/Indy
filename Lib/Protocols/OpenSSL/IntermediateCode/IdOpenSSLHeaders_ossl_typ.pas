@@ -38,6 +38,15 @@ uses
   IdGlobal,
   IdOpenSSLConsts;
 
+{$IFDEF WIN32_OR_WIN64}
+{$HPPEMIT '#if defined(X509_NAME)'}
+{$HPPEMIT '# undef X509_NAME'}
+{$HPPEMIT '#endif'}
+{$HPPEMIT '#if defined(OCSP_RESPONSE)'}
+{$HPPEMIT '# undef OCSP_RESPONSE'}
+{$HPPEMIT '#endif'}
+{$ENDIF}
+
 type
 // moved from unit "asn1" to prevent circular references
   asn1_string_st = record

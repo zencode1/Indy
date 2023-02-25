@@ -39,6 +39,12 @@ uses
   IdOpenSSLConsts,
   IdOpenSSLHeaders_ossl_typ;
 
+{$IFDEF WIN32_OR_WIN64}
+{$HPPEMIT '#if defined(PKCS7_SIGNER_INFO)'}
+{$HPPEMIT '# undef PKCS7_SIGNER_INFO'}
+{$HPPEMIT '#endif'}
+{$ENDIF}
+
 const
   PKCS7_S_HEADER = 0;
   PKCS7_S_BODY   = 1;
