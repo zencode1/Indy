@@ -178,7 +178,18 @@ begin                                  //FI:C101
       {$ENDIF}
       Result := not (FLibCrypto = IdNilHandle) and not (FLibSSL = IdNilHandle);
       if not Result then
+      begin
+        FLoadCount.Decrement();
+        if FLibSSL <> IdNilHandle then begin
+          FreeLibrary(FLibSSL);
+          FLibSSL := IdNilHandle;
+        end;
+        if FLibCrypto <> IdNilHandle then begin
+          FreeLibrary(FLibCrypto);
+          FLibCrypto := IdNilHandle;
+        end;
         Exit;
+      end;
 
       IdOpenSSLHeaders_aes.Load(FLibCrypto, FFailed);
       IdOpenSSLHeaders_asn1.Load(FLibCrypto, FFailed);
