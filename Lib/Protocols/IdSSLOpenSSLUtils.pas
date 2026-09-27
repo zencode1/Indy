@@ -1059,7 +1059,7 @@ begin
          VWhereStr := VWhereStr + ' read:'+ IdSslAlertTypeStringLong(Aret);
        end else begin
          VWhereStr := VWhereStr + 'write:'+ IdSslAlertTypeStringLong(Aret);
-       end;;
+       end;
        VMsg := IdSslAlertDescStringLong(Aret);
     end else begin
        if (Awhere and SSL_CB_EXIT) > 0 then begin

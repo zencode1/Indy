@@ -114,7 +114,7 @@ begin
     LF.Password := AURL.URLDecode(AURL.Password);
     LF.Username := AURL.URLDecode(AURL.Username);
     LF.IPVersion := AURL.IPVersion;
-	LF.Password := AURL.Password;;
+	LF.Password := AURL.Password;
 	if LF.Username = '' then
     begin
       LF.Username := 'anonymous';

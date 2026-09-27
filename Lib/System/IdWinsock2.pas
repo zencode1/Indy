@@ -7970,7 +7970,7 @@ function IN6ADDR_ISISATAP(a : PSOCKADDR_IN6) : Boolean;
 {$IFDEF USE_INLINE}inline;{$ENDIF}
 begin
   ASSERT(a^.sin6_family = AF_INET6);
-  Result := IN6_IS_ADDR_ISATAP(@a^.sin6_addr);;
+  Result := IN6_IS_ADDR_ISATAP(@a^.sin6_addr);
 end;
 
 function IN6ADDR_IS6TO4(a : PSOCKADDR_IN6) : Boolean;

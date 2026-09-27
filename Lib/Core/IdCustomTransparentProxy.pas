@@ -254,7 +254,7 @@ procedure TIdCustomTransparentProxy.OpenUDP(AHandle: TIdSocketHandle;
   const AHost: string = ''; const APort: TIdPort = 0;
   const AIPVersion: TIdIPVersion = ID_DEFAULT_IP_VERSION);
 begin
-  RaiseUDPNotSupportedError;;
+  RaiseUDPNotSupportedError;
 end;
 
 function TIdCustomTransparentProxy.RecvFromUDP(AHandle: TIdSocketHandle;

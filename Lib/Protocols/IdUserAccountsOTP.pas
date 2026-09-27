@@ -245,7 +245,7 @@ end;
 destructor TIdOTPUserManager.Destroy;
 begin
   FreeAndNil(FAccounts);
-  inherited Destroy;;
+  inherited Destroy;
 end;
 
 procedure TIdOTPUserManager.DoAuthentication(const AUsername: String;
